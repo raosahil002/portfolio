@@ -1,0 +1,142 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  
+    height: 70px;
+    top: 0;
+    transition: all 0.7s;
+  }
+  
+  .blur{
+    background-color:#01111a8d;
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 20px );
+  }
+  
+  .logo{
+    font-size: 32px;
+    letter-spacing: 2px;
+    padding-left: 7%;
+    color: #9067C6;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor:pointer;
+  }
+  
+  .navbar-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 7%;
+    font-weight: 500;
+    font-size: 22px;
+  }
+  
+  .navbar-links li{
+    padding: 2px 20px;
+    list-style-type: none;
+  }
+  
+  .navbar-links a{
+    color: #c2c1c2;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 95%;
+    padding: 2px 7px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  
+  .navbar-links a:hover{
+    color: #ffffff;
+  }
+  .navbar-links a::after{
+    background-color: #ffffff;
+    content: "";
+    position: absolute;
+    height: 3px;
+    left: 5px;
+    bottom: 0;
+    width: 0px;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .navbar-links a:hover:after{
+    width: 95%;
+  }
+  .hamburger{
+    display: none;
+  }
+  
+  @media(max-width:800px){
+    .navbar{
+      width: 100%;
+    }
+  
+    .navbar-links{
+      font-size: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: fixed;
+      inset: 0 0 0 50%;
+      gap: 50px;
+      background-color:#431f47;
+      height: 100vh;
+      padding-top: max(20%,120px);
+      transform: translateX(100%);
+      transition: 0.5s;
+    }
+  
+    .showNavbar{
+      transform: translateX(0);    
+    }
+  
+    .hamburger{
+      display: block;
+      z-index: 2;
+      padding: 5px;
+      padding-right: 7%;
+      cursor: pointer;
+    }
+  
+    .bar{
+      display: block;
+      background-color: #E7E7E7;
+      border-radius: 50px;
+      height: 2.5px;
+      width: 30px;
+      margin: 6px;
+      transition: 0.5s;
+    }
+    .bar-one{
+      rotate: -225deg;
+      position: relative;
+      top: 4px;
+      transition: 0.5s ;
+    }
+    .bar-two{
+      display: none;
+    }
+    .bar-three{
+      position: relative;
+      bottom: 4px;
+      rotate: 225deg;
+      transition: 0.5s;
+    }
+    
+  }
+
+  @media(max-width: 500px){
+    .navbar-links {
+      inset: 0 0 0 30%;
+    }
+  }
